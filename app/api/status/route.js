@@ -10,5 +10,5 @@ export async function GET(request) {
   }
 
   // Возвращаем редирект
-  return new NextResponse("Status correct", { status: 200 });
+  return new NextResponse("Status correct" + id, { status: 200 });
 }
