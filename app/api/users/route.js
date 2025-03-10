@@ -22,3 +22,25 @@ export async function POST(request) {
         return NextResponse.json({ error: "Ошибка сервера" }, { status: 500 });
     }
 }
+
+export async function GET(request) {
+    await connectDB(); // Подключаемся к MongoDB
+
+    try {
+        // const { name, email, password, birthdate } = await request.json();
+
+        // if (!name || !email || !password || !birthdate) {
+        //     return NextResponse.json({ error: "Все поля обязательны" }, { status: 400 });
+        // }
+
+        // const newUser = new User({ name, email, password, birthdate });
+        // await newUser.save();
+
+        console.log("GET");
+
+        return NextResponse.json({ message: "Пользователь создан", user: newUser }, { status: 201 });
+    } catch (error) {
+        console.error("Ошибка:", error);
+        return NextResponse.json({ error: "Ошибка сервера" }, { status: 500 });
+    }
+}
