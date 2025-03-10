@@ -38,9 +38,9 @@ export async function GET(request) {
 
         console.log("GET");
 
-        return NextResponse.json({ message: "Пользователь создан", user: newUser }, { status: 201 });
+        return NextResponse.json({ message: "User created" }, { status: 201 });
     } catch (error) {
         console.error("Ошибка:", error);
-        return NextResponse.json({ error: "Ошибка сервера" }, { status: 500 });
+        return NextResponse.json({ error: "Server error" }, { status: 500 });
     }
 }
